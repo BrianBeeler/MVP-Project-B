@@ -60,5 +60,18 @@ Explain why each system fails, and how to guard against that failure:
 
 * You'll need to serve fizzbuzz as a web page (not from a file). Now's a great time to `brew install python` and `python -m SimpleHTTPServer`.
 
-## Grunt
-* [ ] Create a grunt task that will rerun `jshint` and `mocha` every time you change a file in `src/`
+## ORMs
+Imagine you already have Sequelize installed, and don't worry about connecting to any existing database. Just write the necessary syntax as required below:
+* [ ] Defining sequelize tables for users and tweets
+* [ ] Declare the association that users have many tweets
+* [ ] Using your definitions, write code needed to build & save a new user
+
+## SQL
+Using [WWW SQL Designer](http://ondras.zarovi.cz/sql/demo/) or [DB designer](http://dbdsgnr.appspot.com/), draw the schema for the following data
+* Create the following 3 tables with the specified relationships:
+  * [ ] publisher, has many authors, has one genre
+  * [ ] author, has many publishers, has many genres
+  * [ ] genre, has many publishers, has many authors
+  * Be sure to include any foreign keys you will need, as columns of the tables you design
+  * Export as an image and save to the `sql-publisher-author-genre` folder. To take a screen shot on a Mac, use the shortcut `Cmd+Shift+4` then drag a box around your desired image. The image will be saved to the desktop.
+* [ ] Write an `INSERT` query that stores a new user record with a name, age, and location
