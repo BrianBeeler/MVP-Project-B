@@ -1,0 +1,59 @@
+<!-- simple-todos.html -->
+<head>
+    <title>Grade App</title>
+</head>
+
+<body>
+  <div class="container">
+     <header>
+        <h1>Grade App</h1>
+      </header>
+      <ul>
+         {{#each courses}}
+          {{> course }}
+         {{/each}}
+      </ul>
+      <form class="new-course">
+        <input type="text" name="text" placeholder="Type to add new course" />
+      </form>
+  </div>
+</body>
+
+
+<!-- Courses -->
+<template name="course">
+  <li>
+    <button class="delete">&times;</button>
+    <span class="text">{{text}}</span>
+      <ul>
+      {{ #each criteria }}
+        {{> critItem }}
+      {{/each      }}
+     </ul>
+
+      <form class="new-criteria">
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <input type="text" name="inputCriteria" class="inputCriteria" placeholder="Criteria Name" />
+        &nbsp; &nbsp; &nbsp;
+        <input type="text" name="inputPercent"  class="inputCriteria" placeholder= "% of Grade"   />
+        <input type="submit" />
+      </form>
+  </li>
+</template>
+
+
+<!-- Criteria -->
+
+<template name="critItem">
+  <li>
+    <button class="delete">&times;</button>
+    <span class="text"> &nbsp; &nbsp; {{this.text}}</span>
+    <span class="text">
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp;
+
+    Weight &nbsp; &nbsp; {{this.weight }}%  </span>
+  </li>
+</template>
+
